@@ -37,3 +37,7 @@ docker kill "container id"
 
 # To delete all the caching and images
 docker system prune
+
+# To Remove Images
+docker rmi centos
+docker rmi -f centos
