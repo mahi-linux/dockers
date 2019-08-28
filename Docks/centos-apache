@@ -1,0 +1,6 @@
+# REREFENCES:
+# https://github.com/CentOS/CentOS-Dockerfiles/tree/master/httpd/centos7
+# https://hub.docker.com/r/centos/httpd-24-centos7/
+# https://hub.docker.com/r/centos/httpd/dockerfile
+
+docker pull centos/httpd-24-centos7
