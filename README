@@ -1,43 +1,43 @@
 # dockers
 # Dockers new vision towards technology.
 
-## Display Docker version and info
+## To display docker version and info
 docker --version
 docker version
 docker info
 
-## To search Docker Image
+## To search docker image
 docker search centos
 
-## Pull Docker Images:
+## Pull docker images:
 docker pull centos
 docker pull centos:latest
 
-# To List all downloaded or local images
+## To list all downloaded or local images
 docker images
-docker images -a
 
-## Execute Docker image
+## To execute docker image
 docker run hello-world
 docker run -it centos (or) docker run -it centos bash
 
-## Create and Start Images
+## To create and start images
 docker create -it centos
 docker start -ai "container id"
 
-## List Docker images
-docker images
-
-## List Docker containers (running, all, all in quiet mode)
+## List docker containers (running, all, all in quiet mode)
 docker ps
 docker ps -a
 
-# Kill Running Docker image
-docker kill "container id"
+## To stop all containers:
+docker kill $(docker ps -a -q)
 
-# To delete all the caching and images
+## To remove all containers
+docker rm $(docker ps -a -q)
+
+## To delete all the caching and images
 docker system prune
 
-# To Remove Images
+## To remove single/all docker images
 docker rmi centos
 docker rmi -f centos
+docker rmi -f $(docker ps -a -q)
