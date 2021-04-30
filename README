@@ -48,7 +48,7 @@ docker system prune
 ## To remove single/all docker images
 docker rmi centos
 docker rmi -f centos
-docker rmi -f $(docker ps -a -q)
+docker rmi -f $(docker images -a -q)  (or) docker system prune -a 
 
 ## To share a local/shared storage with container image
 docker run -it --mount src="$(pwd)",target=/shareddrive,type=bind centos # bind mount, must run the command from shared drive
