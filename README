@@ -1,6 +1,11 @@
 # dockers
 # Dockers new vision towards technology.
 
+## Docker installation
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum -y install docker-ce
+
 ## To display docker version and info
 docker --version
 docker version
@@ -41,3 +46,7 @@ docker system prune
 docker rmi centos
 docker rmi -f centos
 docker rmi -f $(docker ps -a -q)
+
+## To share a local/shared storage with container image
+docker run -it -v /localshare:/containershare centos
+
