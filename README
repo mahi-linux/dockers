@@ -18,8 +18,8 @@ docker info
 docker search centos
 
 ## Pull docker images:
-docker pull centos
-docker pull centos:latest
+docker pull centos:7
+docker pull centos # It would always call latest version image
 
 ## To list all downloaded or local images
 docker images
