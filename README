@@ -43,8 +43,9 @@ docker kill $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
 ## To delete everything
-docker system prune # just delete the containers
-docker system prune --volumes  # This will delete everything excluding images.
+docker system prune # Just delete the stopped containers and build cache
+docker system prune --volumes  # Delete everything excluding images
+docker system prune -a --volumes # Delete everything [Images, vol, network, containers]
 
 ## To remove single/all docker images
 docker rmi centos
