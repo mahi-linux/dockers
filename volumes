@@ -53,3 +53,22 @@ Filesystem               Size  Used Avail Use% Mounted on
 ## Hosts volume with mount option
 docker run -it --name centos8 --mount source=testdir,target=/data01 centos. # with mount option will not work for volumes created under "/"
 
+## Create CIFS/Samba volumes
+
+Create a Volume:
+
+docker volume create \
+	--driver local \
+	--opt type=cifs \
+	--opt device=//pswus2prodrepo01stor.file.core.windows.net/centos7 \
+	--opt o=username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
+	--name cif-volume
+
+Attach the volume to the container:
+
+docker volume inspect cif-volume
+
+docker run -it --name centos79 -v cif-volume:/repocent7 centos:7 df -h /repocent7
+Filesystem                                            Size  Used Avail Use% Mounted on
+//pswus2prodrepo01stor.file.core.windows.net/centos7  200G  896K  200G   1% /repocent7
+
