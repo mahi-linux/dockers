@@ -1,0 +1,19 @@
+# docker-compose supprts docker-compose.yml, docker-compose.yaml, compose.yaml, compose.yml
+
+# mkdir /dockers; cd /dockers
+# vim compose.yaml
+services:
+  httpd:
+    image: centos/httpd
+    tty: True
+    ports:
+      - 8080:80
+# docker-compose up -d
+# docker-compose ps -a (or) docker ps -a
+
+To connect to the container
+# docker exec -it <container id> bash
+# ps -ef | grep -i httpd
+
+
+ 
