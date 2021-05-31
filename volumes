@@ -10,7 +10,7 @@ local     a002ac46da8fce7e90647e58bda0cfb49c3427665da5205cd0c299b7f26388ae
 
 ## Named volumes
 
-Create a container and attach to the container:
+Create a volume and attach to the container:
 
 [root@sal-webp01 ~]# docker volume create myvol
 myvol
