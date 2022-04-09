@@ -1,2 +1,0 @@
-# Download, Install, login into the centos server
-docker run -it centos
