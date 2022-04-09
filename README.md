@@ -1,40 +1,45 @@
-# dockers
-# Dockers new vision towards technology.
+## dockers cheet-sheet
 
-## Docker installation on CentOS
+##### Docker installation on CentOS
+```
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum -y install docker-ce
 
-# To enable and start the docker service
+* To enable and start the docker service
 systemctl --now enable  docker
-
-## To display docker version and info
+```
+##### To display docker version and info ##### 
+```
 $ docker --version
 $ docker version
 $ docker info
-
-## To search docker image
+```
+##### To search docker image
+```
 $ docker search centos
-
-## Pull docker images:
+```
+##### Pull docker images:
+```
 $ docker pull centos:7
 $ docker pull centos # It would always call latest version image
-
-## To list all downloaded or local images
+```
+##### To list all downloaded or local images
+```
 $ docker images
-
-## To execute docker image
+```
+##### To execute docker image
+```
 $ docker run hello-world
 $ docker run -it centos (or) docker run -it centos bash
-
-## To create and start images
+```
+##### To create and start images
+```
 $ docker create -it centos
 $ docker start -ai "container id"
-
-## To pull/download the docker image and run the apache application on the container.
-
-```hcl
+```
+###### To pull/download the docker image and run the apache application on the container.
+```
 $ docker run -d -p 80:80 --name apache httpd
 Unable to find image 'httpd:latest' locally
 latest: Pulling from library/httpd
@@ -50,8 +55,9 @@ Status: Downloaded newer image for httpd:latest
 => where the first port is container port and 2nd port is on the host machine.
 
 => Verify the webpage status form the web browser http://192.168.10.12/
-
-## To pull/download the docker image and run the nginx application on the container.
+```
+##### To pull/download the docker image and run the nginx application on the container.
+```
 $ docker run -d -p 8080:80 --name proxyserver nginx
 Unable to find image 'nginx:latest' locally
 latest: Pulling from library/nginx
@@ -69,45 +75,56 @@ Status: Downloaded newer image for nginx:latest
 
 ```
 
-## List docker containers (running, all, all in quiet mode)
+##### List docker containers (running, all, all in quiet mode)
+```
 $ docker ps
 $ docker ps -a
 $ docker container ls
-
-## To see the running processors inside the container
+```
+##### To see the running processors inside the container
+```
 $ docker top apache
-
-## To see the container information in a json format
+```
+##### To see the container information in a json format
+```
 $ docker inspect apache
 $ docker container inspect apache
-
-## To see the container resource usage
+```
+##### To see the container resource usage
+```
 $ docker stats apache (or) docker stats 
-
-## To connect to the container (or) ssh to the container
+```
+##### To connect to the container (or) ssh to the container
+```
 $ docker exec -it apache /bin/bash
-
-## To stop the containers
+```
+##### To stop the containers
+```
 $ docker stop apache proxyserver
- 
-## To start the containers
+ ```
+##### To start the containers
+```
 $ docker start apache proxyserver
-
-## To kill the containers
+```
+##### To kill the containers
+```
 $ docker kill $(docker ps -a -q)
-
-## To remove the containers
+```
+##### To remove the containers
+```
 $ docker rm apache proxyserver
 $ docker rm $(docker ps -a -q)
-
-## To remove single/all docker images
+```
+##### To remove single/all docker images
+```
 $ docker rmi centos
 $ docker rmi -f centos
 $ docker rmi -f $(docker images -a -q)
-
-## To delete everything
+```
+##### To delete everything
+```
 $ docker system prune # Just delete the stopped containers and build cache
 $ docker system prune --volumes  # Delete everything excluding images
 $ docker system prune -a --volumes # Delete everything [Images, vol, network, containers]
-
+```
 
