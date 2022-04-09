@@ -1,4 +1,4 @@
-## dockers cheet-sheet
+## dockers cheat-sheet
 
 ##### Docker installation on CentOS
 ```
@@ -9,7 +9,7 @@ yum -y install docker-ce
 * To enable and start the docker service
 systemctl --now enable  docker
 ```
-##### To display docker version and info ##### 
+##### To display docker version and info
 ```
 $ docker --version
 $ docker version
@@ -54,7 +54,7 @@ Status: Downloaded newer image for httpd:latest
 
 => where the first port is container port and 2nd port is on the host machine.
 
-=> Verify the webpage status form the web browser http://192.168.10.12/
+=> Verify the webpage status from the web browser http://192.168.10.12/
 ```
 ##### To pull/download the docker image and run the nginx application on the container.
 ```
@@ -71,10 +71,8 @@ Digest: sha256:2275af0f20d71b293916f1958f8497f987b8d8fd8113df54635f2a5915002bf1
 Status: Downloaded newer image for nginx:latest
 055ed2373fa1e96643c71e8d834aa68655c022947564fedd0afede07dbe951d2
 
-=> Verify the webpage status form the web browser http://192.168.10.12:8080/
-
+=> Verify the webpage status from the web browser http://192.168.10.12:8080/
 ```
-
 ##### List docker containers (running, all, all in quiet mode)
 ```
 $ docker ps
