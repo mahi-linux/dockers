@@ -38,7 +38,7 @@ $ docker run -it centos (or) docker run -it centos bash
 $ docker create -it centos
 $ docker start -ai "container id"
 ```
-###### To pull/download the docker image and run the apache application on the container.
+##### To pull/download the docker image and run the apache application on the container.
 ```
 $ docker run -d -p 80:80 --name apache httpd
 Unable to find image 'httpd:latest' locally
