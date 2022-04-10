@@ -37,17 +37,15 @@ COPY nginx.repo /etc/yum/repos.d/nginx.repo
 
 RUN yum clean all
 RUN yum -y install nginx
-#RUN systemctl --now enable nginx
 
-EXPOSE 8080
-#CMD ["/usr/sbin/init"]
-CMD ["nginx", "-g", "deamon off";
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
 
-$ docker image build -t nginx:myorg nginx
+$ docker image build -t myorg:nginx nginx
 
 To build a container from the custom image
 
-$ docker run -d nginx:testenv -p 8080:80
+$ docker run -d -p 8080:80 myorg:nginx
 
 $ curl http://localhost:8080
 ```
