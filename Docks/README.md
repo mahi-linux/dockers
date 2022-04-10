@@ -1,4 +1,4 @@
-##### To build the the centos:7 container using the dockerfile.
+##### To build the the custom centos:7 Image using the dockerfile.
 ```
 $ mkdir docker
 
@@ -11,7 +11,7 @@ syntax: docker image build -t ImageName:TagName dockerfile-dir
 
 $ docker image build -t centos7:test docker
 ```
-##### To build the the Nginx container using the dockerfile.
+##### To build the the custom Nginx Image using the dockerfile.
 ```
 $ mkdir nginx
 
@@ -40,6 +40,14 @@ RUN yum -y install nginx
 #RUN systemctl --now enable nginx
 
 EXPOSE 8080
-CMD ["/usr/sbin/init"]
-$ docker build -t nginx:test nginx
+#CMD ["/usr/sbin/init"]
+CMD ["nginx", "-g", "deamon off";
+
+$ docker image build -t nginx:myorg nginx
+
+To build a container from the custom image
+
+$ docker run -d nginx:testenv -p 8080:80
+
+$ curl http://localhost:8080
 ```
