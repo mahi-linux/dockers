@@ -48,4 +48,20 @@ To build a container from the custom image
 $ docker run -d -p 8080:80 myorg:nginx
 
 $ curl http://localhost:8080
+
+** Publish the custom image in docker repository **
+
+$ docker login
+
+$ docker commit "59b4c95829eb"
+
+Change the tagging
+
+$ docker image tag myorg:nginx maheshreddy/nginx
+
+Push the image to the docker repository
+
+$ docker image push maheshreddy/nginx
+
+Verify the image from the https://hub.docker.com/
 ```
