@@ -28,7 +28,7 @@ $ docker pull centos # It would always call latest version image
 ```
 $ docker images
 ```
-##### To execute docker image
+##### To download docker image and run the container
 ```
 $ docker run hello-world
 $ docker run -it centos (or) docker run -it centos bash
@@ -90,7 +90,8 @@ $ docker container inspect apache
 ```
 ##### To see the container resource usage
 ```
-$ docker stats apache (or) docker stats 
+$ docker stats apache
+$ docker stats 
 ```
 ##### To connect to the container (or) ssh to the container
 ```
