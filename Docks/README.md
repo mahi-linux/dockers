@@ -31,15 +31,18 @@ FROM centos:7
 LABEL version="1.0"
 LABEL maintainer="Mahesh"
 
-ENV ENVIRONMENT TEST
+# To set the class path
+# ENV JAVA_HOME="JAVA_LOCATION"
+# WORKDIR /opt
 
 COPY nginx.repo /etc/yum/repos.d/nginx.repo
 
-RUN yum clean all
-RUN yum -y install nginx
+RUN yum clean all \
+yum -y install nginx
 
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
+# CMD ["sh /script.sh"]
 
 $ docker image build -t myorg:nginx nginx
 
