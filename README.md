@@ -126,4 +126,11 @@ $ docker system prune # Just delete the stopped containers and build cache
 $ docker system prune --volumes  # Delete everything excluding images
 $ docker system prune -a --volumes # Delete everything [Images, vol, network, containers]
 ```
+##### Errors
+```
+certificate error message:
 
+docker: Error response from daemon: Get "https://registry-1.docker.io/v2/": x509: certificate signed by unknown authority.
+
+fix: update zscaler certificate through vagrant provision and restart the docker daemon
+```
