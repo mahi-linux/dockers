@@ -46,7 +46,7 @@ ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
 
 $ docker image build -t myorg:nginx nginx
 
-To build a container from the custom image
+validate the custom image before you push to the docker repository
 
 $ docker run -d -p 8080:80 myorg:nginx
 
@@ -67,4 +67,11 @@ Push the image to the docker repository
 $ docker image push maheshreddy/nginx
 
 Verify the image from the https://hub.docker.com/
+
+Published custom image is available to use.
+
+$ docker run -d -p 8080:80 -t nginx maheshreddy/nginx
+
+$ curl http://localhost:8080
+
 ```
