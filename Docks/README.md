@@ -70,7 +70,7 @@ Verify the image from the https://hub.docker.com/
 
 Published custom image is available to use.
 
-$ docker run -d -p 8080:80 -t nginx maheshreddy/nginx
+$ docker run -d -p 8080:80 maheshreddy/nginx
 
 $ curl http://localhost:8080
 
