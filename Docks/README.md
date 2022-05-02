@@ -52,6 +52,11 @@ $ docker run -d -p 8080:80 myorg:nginx
 
 $ curl http://localhost:8080
 
+Add some data to dockerfile and rebuild the image
+
+ex: $ docker image build -t customimage:0.0.1 nginx
+    $ docker container run -p 8081:80 customimage:0.0.1
+
 ** Publish the custom image in docker repository **
 
 $ docker login
