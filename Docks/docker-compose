@@ -16,4 +16,7 @@ To connect to the container
 # docker exec -it <container id> bash
 # ps -ef | grep -i httpd
 
+# docker-compose logs -f --tail=5 rhel7
+
+
  
