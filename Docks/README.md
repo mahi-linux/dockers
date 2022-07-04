@@ -37,8 +37,8 @@ LABEL maintainer="Mahesh"
 
 COPY nginx.repo /etc/yum/repos.d/nginx.repo
 
-RUN yum clean all \
-yum -y install nginx
+RUN yum clean all
+RUN yum -y install nginx
 
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
