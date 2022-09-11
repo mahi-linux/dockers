@@ -7,9 +7,9 @@ FROM centos:7
 RUN yum update -y
 RUN yum -y install wget
 
-syntax: docker image build -t ImageName:TagName dockerfile-dir
+syntax: docker build -t "tag" dockerfile-dir
 
-$ docker image build -t centos7:test docker
+$ docker build -t myproj docker/
 ```
 ##### To build the the custom Nginx Image using the dockerfile.
 ```
