@@ -61,11 +61,10 @@ Status: Downloaded newer image for httpd:latest
 ##### dockerfile non-root method
 ```
 $ docker build .
-
-$ docker image => To Get the Image ID
+$ docker image
 $ docker run -d -p 80:80 deb900be2e2c(imageid)
 
-$ docker ps => To Get the Container ID
+$ docker ps
 CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                NAMES
 5228d51fd14b   66a4347a1b16   "httpd-foreground"   3 seconds ago   Up 2 seconds   0.0.0.0:80->80/tcp   eager_snyder
 
