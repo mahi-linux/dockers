@@ -60,7 +60,6 @@ Status: Downloaded newer image for httpd:latest
 
 ##### dockerfile non-root method
 ```
-# Docker Image Name
 FROM httpd:latest
 
 # Switch to the non-root user
@@ -80,6 +79,10 @@ RUN chown -R mahesh:mahesh /usr/local/apache2/
 # CMD ["httpd-foreground"]
 
 USER mahesh
+
+![image](https://user-images.githubusercontent.com/13557069/213743894-7f39e05b-f125-43ff-9862-4caa99ddef1b.png)
+
+
 ```
 $ docker build .
 
