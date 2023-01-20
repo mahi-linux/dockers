@@ -60,8 +60,6 @@ Status: Downloaded newer image for httpd:latest
 
 ##### dockerfile non-root method
 ```
-![image](https://user-images.githubusercontent.com/13557069/213743894-7f39e05b-f125-43ff-9862-4caa99ddef1b.png)
-
 $ docker build .
 
 $ docker image => To Get the Image ID
