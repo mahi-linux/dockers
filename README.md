@@ -59,8 +59,9 @@ Status: Downloaded newer image for httpd:latest
 => Verify the webpage status from the web browser http://192.168.10.12/ (or) curl 192.168.10.12
 
 ##### dockerfile non-root method
-
+```
 ![image](https://user-images.githubusercontent.com/13557069/213743894-7f39e05b-f125-43ff-9862-4caa99ddef1b.png)
+```
 
 ```
 $ docker build .
