@@ -40,7 +40,7 @@ $ docker start -ai "container id"
 ```
 ##### To pull/download the docker image and run the apache application on the container.
 ```
-$ docker run -d -p 80:80 --name apache httpd
+$ docker run -d -p 80:80 --name apache httpd   
 Unable to find image 'httpd:latest' locally
 latest: Pulling from library/httpd
 c229119241af: Pull complete 
@@ -52,9 +52,54 @@ Digest: sha256:e3c40b99ffa305c6e52346a6618b1fb47ea0568c999b26f8900cd26febab1160
 Status: Downloaded newer image for httpd:latest
 5fcf1ba3a5a49bbafcb25cf6cf792dd583eebfa029244007d8b4d4596b1df147
 
-=> where the first port is container port and 2nd port is on the host machine.
+=> This will download latest image if the image is not availabe in local machine. And the container run in background.
 
-=> Verify the webpage status from the web browser http://192.168.10.12/
+=> where the first port is host port and 2nd port is the container port.
+
+=> Verify the webpage status from the web browser http://192.168.10.12/ (or) curl 192.168.10.12
+
+##### dockerfile non-root method
+```
+# Docker Image Name
+FROM httpd:latest
+
+# Switch to the non-root user
+RUN groupadd -g 1001 mahesh && useradd -u 1001 -g 1001 mahesh
+
+# Install depency packages for ps command
+RUN apt update && apt install -y procps curl && rm -rf /var/lib/apt/lists/*
+
+RUN chown -R mahesh:mahesh /usr/local/apache2/
+
+# EXPOSE 80/TCP # This will not epose to host machine
+
+# Start the Apache httpd service as non-root user
+# Since the CMD/ENTRYPOINT already defined at the image level we don't need to define manually
+# CMD/ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# CMD '/usr/sbin/httpd -DFOREGROUND &'
+# CMD ["httpd-foreground"]
+
+USER mahesh
+```
+$ docker build .
+
+$ docker image => To Get the Image ID
+$ docker run -d -p 80:80 deb900be2e2c(imageid)
+
+```
+$ docker ps => To Get the Container ID
+CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                NAMES
+5228d51fd14b   66a4347a1b16   "httpd-foreground"   3 seconds ago   Up 2 seconds   0.0.0.0:80->80/tcp   eager_snyder
+
+$ docker exec -it 5228d51fd14b bash
+mahesh@5228d51fd14b:/usr/local/apache2$ id
+uid=1001(mahesh) gid=1001(mahesh) groups=1001(mahesh)
+
+mahesh@5228d51fd14b:/usr/local/apache2$ curl localhost
+<html><body><h1>It works!</h1></body></html>
+
+```
+
 ```
 ##### To pull/download the docker image and run the nginx application on the container.
 ```
