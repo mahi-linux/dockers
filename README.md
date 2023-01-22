@@ -57,7 +57,7 @@ Status: Downloaded newer image for httpd:latest
 => where the first port is host port and 2nd port is the container port.
 
 => Verify the webpage status from the web browser http://192.168.10.12/ (or) curl 192.168.10.12
-
+```
 ##### dockerfile non-root method
 ```
 $ docker build .
@@ -72,10 +72,8 @@ $ docker exec -it 5228d51fd14b bash
 mahesh@5228d51fd14b:/usr/local/apache2$ id
 uid=1001(mahesh) gid=1001(mahesh) groups=1001(mahesh)
 
-mahesh@5228d51fd14b:/usr/local/apache2$ curl localhost
+$ curl localhost
 <html><body><h1>It works!</h1></body></html>
-```
-
 ```
 ##### To pull/download the docker image and run the nginx application on the container.
 ```
