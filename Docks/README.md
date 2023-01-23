@@ -1,4 +1,4 @@
-##### To build the the custom centos:7 Image using the dockerfile.
+##### To build the the custom httpd Image using the dockerfile.
 ```
 $ mkdir httpd
 
@@ -6,11 +6,11 @@ $ vi httpd/dockerfile
 FROM centos:7
 RUN yum update -y
 RUN yum -y install httpd
-CMD/ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 syntax: docker build -t "tags" dockerfile-dir
 
-$ docker build -t httpd:latest /httpd
+$ docker build -t httpd:latest httpd/
 $ docker login
 $ docker image tag httpd:latest maheshreddy/httpd
 $ docker images
