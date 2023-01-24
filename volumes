@@ -1,5 +1,9 @@
 ## Random volumes
 
+Create a directory and mount as a volume:
+# mkdir /mahesh
+# docker run --user root -it -v /mahesh:/test eeb6ee3f44bd bash
+
 [root@sal-webp01 ~]# docker run -it --name centos8 -v /data01 centos df -h /data01
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda1        40G  3.8G   37G  10% /data01
