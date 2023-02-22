@@ -1,0 +1,23 @@
+{
+  "name": "docker-images",
+  "version": "1.0.0",
+  "description": "##### Configure NodeJS application from the scratch: ``` * create docker file cat dockerfile",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/gitfs/docker-images.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/gitfs/docker-images/issues"
+  },
+  "homepage": "https://gitlab.com/gitfs/docker-images#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

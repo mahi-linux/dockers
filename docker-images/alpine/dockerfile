@@ -1,0 +1,12 @@
+FROM httpd:2.4-alpine
+RUN adduser -D -g mahesh -u 1001 mahesh && \
+    chown -R mahesh:mahesh /usr/local/apache2 && \
+    chmod -R 755 /usr/local/apache2 && \
+    # su mahesh -c "/usr/local/apache2/bin/httpd" && \
+    echo "ServerName localhost" >> /usr/local/apache2/conf/httpd.conf
+
+EXPOSE 80
+
+USER mahesh
+
+CMD ["/usr/local/apache2/bin/httpd", "-D", "FOREGROUND"]

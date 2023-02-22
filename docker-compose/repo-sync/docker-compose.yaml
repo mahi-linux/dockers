@@ -1,0 +1,36 @@
+# docker-compose supprts docker-compose.yml, docker-compose.yaml, compose.yaml, compose.yml
+
+services:
+  rhel7:
+    image: registry.access.redhat.com/rhel7
+    tty: True
+    volumes:
+      - /rhel7:/rhel7
+      - /docker:/opt
+    command: /bin/sh -c "/opt/rhel7.sh"
+
+
+  rhel8:
+    image: registry.access.redhat.com/ubi8/ubi
+    tty: True
+    volumes:
+      - /rhel8:/rhel8
+      - /docker:/opt
+    command: /bin/sh -c "/opt/rhel8.sh"
+
+
+  centos7:
+    image: centos:7
+    tty: True
+    volumes:
+      - /centos7:/centos7
+      - /docker:/opt
+    command: /bin/sh -c "/opt/centos7.sh"
+
+  centos8:
+    image: centos
+    tty: True
+    volumes:
+      - /centos8:/centos8
+      - /docker:/opt
+    command: /bin/sh -c "/opt/centos8.sh"

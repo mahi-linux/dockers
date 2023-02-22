@@ -1,0 +1,8 @@
+# docker-compose supprts docker-compose.yml, docker-compose.yaml, compose.yaml, compose.yml
+
+services:
+  httpd:
+    image: centos/httpd
+    tty: True
+    ports:
+      - 8080:80
