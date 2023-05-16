@@ -29,7 +29,7 @@ docker run -it maheshreddy/nginx-cifs --entrypoint bash
 ```
 docker run -itd -p 81:80 maheshreddy/nginx-cifs
 ```
-##### Validate the nginx service
+##### To validate the nginx service
 ```
 curl localhost:81
 ```
@@ -38,7 +38,7 @@ curl localhost:81
 docker login
 docker push maheshreddy/nginx-cifs
 ```
-##### to pull the image again
+##### To pull the image from docker-hub
 ##### Before that delete the local image
 ```
 docker rmi -f maheshreddy/nginx-cif
