@@ -102,7 +102,19 @@ $ docker rmi -f $(docker images -aq)
 ```
 ##### To delete everything
 ```
+# Safe commands to use
+$ docker system prune -a -f
+
+# The above command cleans the following
+All stopped containers ✓ (safe)
+All unused networks ✓ (safe)
+All dangling images ✓ (safe)
+ALL unused images ✗ (risky—even tagged images not in use)
+Build cache ✓ (safe, but slower rebuilds)
+
 $ docker system prune # Just delete the stopped containers and build cache
+
+# Dangerous commands:
 $ docker system prune --volumes  # Delete everything excluding images
 $ docker system prune -a --volumes # Delete everything [Images, vol, network, containers]
 ```
